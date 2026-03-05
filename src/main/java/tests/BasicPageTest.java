@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pl.b2b.testfactory.annotations.TestFactoryMethod;
+import pl.b2b.testfactory.annotations.TestFactoryParam;
 
 import java.util.List;
 
@@ -33,8 +34,8 @@ public class BasicPageTest extends BaseTest {
 
     @TestFactoryMethod(value = "testLinksPresent", group = "hk")
     @Test(groups = {"hk"})
-    public void testLinksPresent() {
-        driver.get("https://the-internet.herokuapp.com/");
+    public void testLinksPresent(@TestFactoryParam(value = "baseUrl", description = "Base URL of the application") String baseUrl) {
+        driver.get(baseUrl);
 
         List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
         Assert.assertTrue(links.size() > 10, "Main page should have many example links");
