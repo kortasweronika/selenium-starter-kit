@@ -7,7 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pl.b2b.testfactory.annotations.TestFactoryMethod;
-import pl.b2b.testfactory.annotations.TestFactoryParam;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.util.List;
 
@@ -32,9 +33,10 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
-//    @TestFactoryMethod(value = "testLinksPresent", group = "hk")
+    @TestFactoryMethod(value = "testLinksPresent", group = "hk")
     @Test(groups = {"hk"})
-    public void testLinksPresent(@TestFactoryParam(value = "baseUrl", description = "Base URL of the application") String baseUrl) {
+    @Parameters({"baseUrl"})
+    public void testLinksPresent(@Optional("https://the-internet.herokuapp.com/") String baseUrl) {
         driver.get(baseUrl);
 
         List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
