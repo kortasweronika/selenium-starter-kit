@@ -20,7 +20,7 @@ public class BasicPageTest extends BaseTest {
         };
     }
 
-    @Test(groups = {"podstawowa"}, dataProvider = "pages")
+    @Test(groups = {"hk"}, dataProvider = "pages")
     public void testPageTitle(String url, String expectedHeading) {
         driver.get(url);
 
@@ -29,7 +29,7 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
-    @Test(groups = {"podstawowa"})
+    @Test(groups = {"hk"})
     public void testLinksPresent() {
         driver.get("https://the-internet.herokuapp.com/");
 
@@ -37,7 +37,7 @@ public class BasicPageTest extends BaseTest {
         Assert.assertTrue(links.size() > 10, "Main page should have many example links");
     }
 
-    @Test(groups = {"podstawowa"})
+    @Test(groups = {"hk"})
     public void testStatusCodes() {
         driver.get("https://the-internet.herokuapp.com/status_codes");
 
