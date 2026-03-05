@@ -33,7 +33,7 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
-//    @Test(groups = {"hk"})
+    @Test()
 //    @Parameters({"baseUrl"})
     public void testLinksPresent() {
         driver.get("https://the-internet.herokuapp.com/");
