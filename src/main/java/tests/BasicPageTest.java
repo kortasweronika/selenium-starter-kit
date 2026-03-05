@@ -23,7 +23,7 @@ public class BasicPageTest extends BaseTest {
         };
     }
 
-    @TestFactoryMethod(value = "testPageTitle", group = "hk")
+    @TestFactoryMethod(value = "testPageTitle", group = "hk987")
     @Test(groups = {"hk"}, dataProvider = "pages")
     public void testPageTitle(String url, String expectedHeading) {
         driver.get(url);
