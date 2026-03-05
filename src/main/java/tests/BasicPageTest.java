@@ -23,9 +23,9 @@ public class BasicPageTest extends BaseTest {
         };
     }
 
-    @TestFactoryMethod(value = "testPageTitle", group = "hk987")
+    @TestFactoryMethod(value = "testPageTitle", group = "h")
     @Test(groups = {"hk"}, dataProvider = "pages")
-    public void testPageTitle(String url, String expectedHeading) {
+    public void testPageTitle(String url, String expectedHeading, String expectedText) {
         driver.get(url);
 
         WebElement heading = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("h1")));
