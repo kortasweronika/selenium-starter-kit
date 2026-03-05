@@ -32,7 +32,7 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
-    @TestFactoryMethod(value = "testLinksPresent", group = "hk")
+//    @TestFactoryMethod(value = "testLinksPresent", group = "hk")
     @Test(groups = {"hk"})
     public void testLinksPresent(@TestFactoryParam(value = "baseUrl", description = "Base URL of the application") String baseUrl) {
         driver.get(baseUrl);
