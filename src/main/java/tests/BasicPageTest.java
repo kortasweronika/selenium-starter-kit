@@ -33,11 +33,10 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
-    @TestFactoryMethod(value = "testLinksPresent", group = "hk4")
     @Test(groups = {"hk"})
-    @Parameters({"baseUrl"})
-    public void testLinksPresent(@Optional("https://the-internet.herokuapp.com/") String baseUrl) {
-        driver.get(baseUrl);
+//    @Parameters({"baseUrl"})
+    public void testLinksPresent() {
+        driver.get("https://the-internet.herokuapp.com/");
 
         List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
         Assert.assertTrue(links.size() > 10, "Main page should have many example links");
