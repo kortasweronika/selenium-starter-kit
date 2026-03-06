@@ -34,14 +34,14 @@ public class BasicPageTest extends BaseTest {
                 "Page heading should contain: " + expectedHeading);
     }
 
-    @Test()
-//    @Parameters({"baseUrl"})
-    public void testLinksPresent() {
-        driver.get("https://the-internet.herokuapp.com/");
-
-        List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
-        Assert.assertTrue(links.size() > 10, "Main page should have many example links");
-    }
+//    @Test()
+////    @Parameters({"baseUrl"})
+//    public void testLinksPresent() {
+//        driver.get("https://the-internet.herokuapp.com/");
+//
+//        List<WebElement> links = driver.findElements(By.cssSelector("ul li a"));
+//        Assert.assertTrue(links.size() > 10, "Main page should have many example links");
+//    }
 
     @Test(groups = {"hk5"})
     @TestFactoryMethod(value = "testLinksPresent", group = "hk5")
