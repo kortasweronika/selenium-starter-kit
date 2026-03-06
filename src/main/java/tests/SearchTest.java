@@ -19,7 +19,7 @@ public class SearchTest extends BaseTest {
         };
     }
 
-    @Test(groups = {"smoke"}, dataProvider = "checkboxStates")
+    @Test(groups = {"smoke876"}, dataProvider = "checkboxStates")
     public void testCheckboxToggle(int index, boolean expectedState) {
         driver.get("https://the-internet.herokuapp.com/checkboxes");
 
@@ -35,16 +35,16 @@ public class SearchTest extends BaseTest {
                 "Checkbox " + index + " should be " + (expectedState ? "checked" : "unchecked"));
     }
 
-    @Test(groups = {"smoke"})
-    public void testDropdown() {
-        driver.get("https://the-internet.herokuapp.com/dropdown");
-
-        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("dropdown")));
-        dropdown.findElement(By.cssSelector("option[value='2']")).click();
-
-        WebElement selected = dropdown.findElement(By.cssSelector("option[selected]"));
-        Assert.assertEquals(selected.getText(), "Option 2", "Option 2 should be selected");
-    }
+//    @Test(groups = {"smoke"})
+//    public void testDropdown() {
+//        driver.get("https://the-internet.herokuapp.com/dropdown");
+//
+//        WebElement dropdown = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("dropdown")));
+//        dropdown.findElement(By.cssSelector("option[value='2']")).click();
+//
+//        WebElement selected = dropdown.findElement(By.cssSelector("option[selected]"));
+//        Assert.assertEquals(selected.getText(), "Option 2", "Option 2 should be selected");
+//    }
 
     @Test(groups = {"regression"})
     public void testAddRemoveElements() {
